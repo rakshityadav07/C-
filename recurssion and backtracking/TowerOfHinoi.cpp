@@ -28,7 +28,7 @@ int main(){
 	int n;
 	cin >> n ;
 
-	TowerOfHinoi(n,'A','B','C') ;
+	TowerOfHinoi(n,'A','C','B') ;
 
 	return 0;
 
