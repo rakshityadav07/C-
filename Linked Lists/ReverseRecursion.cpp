@@ -125,8 +125,6 @@ void deleteAtMiddle(node*&head,int p){
 	delete temp;
 
 }
-// 1->2->3->4
-
 
 //Recursive case
 bool searchRecursive(node*head,int key){

@@ -116,7 +116,6 @@ node *buildBalancedTree(int *a,int s,int e){
 	node *root = new node(a[mid]);
 	root->left = buildBalancedTree(a,s,mid-1);
 	root->right = buildBalancedTree(a,mid+1,e);
-
 	return root;
 }
 

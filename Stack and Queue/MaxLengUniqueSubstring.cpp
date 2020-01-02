@@ -35,14 +35,13 @@ int main() {
         }
         visited[a[i]] = i;
         
-        J}
-        
-        if(current_len>max_len){
-            max_len = current_len;
-        }
-
-        cout<<max_len<<endl;
-        
-        return 0;
     }
     
+    if(current_len>max_len){
+        max_len = current_len;
+    }
+
+    cout<<max_len<<endl;
+    
+    return 0;
+}
