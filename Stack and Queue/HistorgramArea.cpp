@@ -21,7 +21,7 @@ void HistogramArea(int arr[],int n){
 			if(s.empty()){
 				HistogramArea1 = arr[i]*i;
 			}else{
-				HistogramArea2 = arr[i]*(i-s.top()-1);
+				HistogramArea2 = arr[s.top()]*(i-s.top()-1);
 			}
 			maximum = max(HistogramArea1,HistogramArea2);
 		}
