@@ -65,13 +65,15 @@ node* deleteInBST(node*root,int data){
 		// 3. Node with 2 Children
 		node* replace = root->right;
 		// Inorder successor from the right subtree
+		// Here we find the leftmost element in the tree
 		while(replace->left!=NULL) {
 			replace = replace->left;
 		}
 		
 		root->data = replace->data;
+		// Here we delete that node which is replacing the root and we provide the 
+		// right side of the root & data which we need to delete from right sub tree 
 		root->right = deleteInBST(root->right,replace->data);
-
 		return root;
 	}
 	else{

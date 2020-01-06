@@ -1,4 +1,5 @@
 /*Inorder(left,root,right)
+Preorder(root,left,right)
 PostOrder(left,right,root)*/ 
 #include <iostream>
 #include <queue>

@@ -22,7 +22,7 @@ int main() {
         int last_occ = visited[a[i]];
         
         //Expansion 
-        if(last_occ==-1||i-current_len>last_occ){
+        if(last_occ==-1 || i-current_len>last_occ){
             current_len += 1;
             //max_len = max(current_len,max_len);
         }
