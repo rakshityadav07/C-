@@ -1,5 +1,6 @@
 // insertion in heap upheapify
 #include <iostream>
+#include <limits>
 #include <vector>
 using namespace std;
 
@@ -37,6 +38,15 @@ void display(vector<int> &heap){
 	}
 }
 
+// Unoptimised verion Time Complexcity of O(nlog2n);
+// This heap is made from the upheapify operation using array
+void heapify(vector<int> &heap){
+
+	int n = heap.size();
+	for (int i = 0; i < n; ++i){
+		upheapify(heap,i);
+	}
+}
 
 
 void downHeapify(vector<int> &heap,int idx){
@@ -63,12 +73,27 @@ void downHeapify(vector<int> &heap,int idx){
 	// here we give the largestIdx because we swap the value not the idx so for now the largest idx will be of either 
 	// left child or right child and this is their largest index and it will recursively make the down heapify call
 	downHeapify(heap,largestIdx);
+
 }
 
-void deletePeek(vector<int> &heap){
+// Time complexcitty of O(n) optimisied version for building the heap from array 
+void buldHeapOptimised(vector<int> &heap){
+
+	int n = heap.size();
+	for(int i=n-1 ;i>=0 ;i--){
+		downHeapify(heap,i);
+	}
+
+}
+
+void deleteAtAnyNode(vector<int> &heap,int idx){
+
+	heap[idx] = 100000;
+	upheapify(heap,idx);
 	swap(heap[0],heap[heap.size()-1]);
 	heap.pop_back();
 	downHeapify(heap,0);
+
 }
 
 int main(int argc, char const *argv[])
@@ -80,11 +105,13 @@ int main(int argc, char const *argv[])
 	for (int i = 0; i < n; ++i){
 		int x;
 		cin>>x;
-		insert(heap,x);
+		heap.push_back(x);
 	}
+	buldHeapOptimised(heap);
 	display(heap);
-	deletePeek(heap);
-	cout <<endl;
+	cout<<endl;
+	deleteAtAnyNode(heap,3);
 	display(heap);
+
 	return 0;
 }

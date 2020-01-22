@@ -200,6 +200,25 @@ node* ReverseRecursive(node*&head){
 	return smallHead;
 }
 
+node* rotate(node* head, int k) {
+    // Your code here
+	node *ptr=head,*temp=head;
+	while(k>1){
+		ptr=ptr->next;
+		k--;
+	}
+	while(temp->next!=NULL){
+		temp=temp->next;
+	}
+
+	temp->next=head;
+
+	head=ptr->next;
+	ptr->next=NULL;
+	return head;
+
+}
+
 
 int main(int argc, char const *argv[])
 {
@@ -211,6 +230,10 @@ int main(int argc, char const *argv[])
 	cout<<head<<endl;
 	// cout<<head2<<endl;
 
+	int ctr;
+	cin>>ctr;
+	node *k = rotate(head,ctr);
+	cout<<k<<endl;
 	return 0;
 }
 
