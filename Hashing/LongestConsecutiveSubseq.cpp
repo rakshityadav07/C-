@@ -15,7 +15,7 @@ int LongestConsecutiveSeq(int *a,int n){
 		if(s.find(a[i]-1) != s.end()){
 			continue;
 		}else{
-			int count = 0;
+			int  count = 0;
 			while(s.find(a[i]) != s.end()){
 				count++;
 				i++;
