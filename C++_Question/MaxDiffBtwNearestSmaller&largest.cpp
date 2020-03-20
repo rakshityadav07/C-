@@ -14,7 +14,7 @@ void leftSmaller(int a[],int n,int ans[]){
 		while(!s.empty() && s.top() >= a[i]){
 			s.pop();
 		}
-
+		
 		if(!s.empty()){
 			ans[i] = s.top();
 		}else{
@@ -25,7 +25,7 @@ void leftSmaller(int a[],int n,int ans[]){
 }
 
 int findMaxDiff(int a[], int n){
-	int left[n];
+	int left[n];w
 	int right[n];
 	leftSmaller(a,n,left);
 	reverse(a,a+n);
